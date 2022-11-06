@@ -1,11 +1,16 @@
-//Globals
-//__dirname     - path to current directory
-//__filename    - file name
-//__require     - function to use modules (CommonJS)
-//__module      - info about current module (file)
-//__process     - info about env where the program is being excuted
+//modules
+//why we use modules
+//commonjs every file is module (bydefault)
+//modules - encapuslated code (only share minimum)
 
-console.log(__dirname)
-setInterval(()=>{
-    console.log('hello world')
-},1000)
+const  names  = require("./4-names")
+const { tellmePassword,sayHi } = require("./5-utils")
+
+const data = require('./6-alternative-flavors')
+console.log(data)
+
+const {secret, ouadjih} = names //destructuring
+tellmePassword(secret)
+
+sayHi(ouadjih)
+require('./7-mind-grenades')
