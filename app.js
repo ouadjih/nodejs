@@ -1,6 +1,6 @@
 //Globals
-//__dirname 
-//__filename
-//__require
-//__module
-//__process
+//__dirname     - path to current directory
+//__filename    - file name
+//__require     - function to use modules (CommonJS)
+//__module      - info about current module (file)
+//__process     - info about env where the program is being excuted
