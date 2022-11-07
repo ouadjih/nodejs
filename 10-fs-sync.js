@@ -1,9 +1,14 @@
 const {readFileSync,writeFileSync} = require('fs')
 
 //read from file
-const read = readFileSync('./content/first.txt','utf-8')
+console.log('starting task 1')
+const first = readFileSync('./content/first.txt','utf-8')
+const second = readFileSync('./content/second.txt','utf-8')
 //console.log(read)
 
-const write = writeFileSync('./content/first.txt','\nsee i can edit you as much as i want since i added flag argument to a',{flag:'a'})
+const write = writeFileSync('./content/result-sync.txt',
+`here is the result : ${first} ${second}`,{flag:'a'})
+console.log("finished task 1")
+console.log('starting task 2')
 
 //console.log(read)
