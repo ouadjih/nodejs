@@ -1,22 +1,24 @@
 const express = require('express')
 const app = express()
+const logger = require('./logger')
+const autherize = require('./autherize')
+
 // req => middleware => res
-
 //must past middle ware to next middleware or send response.
-const logger = (req,res,next)=>{
-    const method = req.method
-    const url = req.url;
-    const time = new Date().getFullYear();
-    console.log(method,url,time)
-    next()
-}
+app.use([autherize,logger])
 
-app.get('/',logger,(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('Home')
 })
 
-app.get('/about',logger,(req,res)=>{
+app.get('/about',(req,res)=>{
     res.send('About')
+})
+app.get('/api/v1/products',(req,res)=>{
+    res.send('products')
+})
+app.get('/api/v1/items',(req,res)=>{
+    res.send('items')
 })
 
 app.listen('5000',(req,res)=>{
